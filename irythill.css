@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/*
+ * Created by August Heen 2024
+ * Github <https://github.com/aaheen/irythill>
+ *
+ * Irythill is a sans-serif dark mode theme inspired by the fictional 
+ * location of Irythill from the game Dark Souls III (2016) by 
+ * FromSoftware. Upon entering a new area, the name of that area
+ * appears on screen in the font Adobe Garamond Pro (semibold). This is
+ * not to be confused with the font of Dark Souls' logo itself, which
+ * uses a typeface that's remarkably similar to Optimus.
+ *
+ * While Adobe Garamond Pro would be ideal, I find that it's not quite
+ * as well suited to actual blocks of text, and is better for headings
+ * and titles. Additionally, it is a paid licensed font, whereas 
+ * EB Garamond is published under the SIL Open Font License 
+ * (https://openfontlicense.org/). EB Garamond is designed by Georg
+ * Duffner and Octavio Pardo.
+ *
+ * I selected Overpass for the UI font, as... I like it. No special
+ * reason. Overpass is licensed
+ *
+ * The monospace font I selected is Mononoki. I chose the Nerd Font
+ * variant. If you are unfamiliar with Nerd Fonts, please see the Nerd
+ * Font website for more information (https://www.nerdfonts.com/). 
+ * Mononoki is published under the SIL Open Font License v1.1
+ * (https://openfontlicense.org/). Mononoki is designed by Matthias
+ * Tellen (https://github.com/madmalik)
+ *
+ * All of the CJK fonts are variants of the Noto Serif CJK set.
+ * They are licensed under the SIL Open Font License. Designed by
+ * Google.
+ * 
+ *
+ * Fonts:
+ * -- Serif                 - EB Garamond
+ * <https://fonts.google.com/specimen/EB+Garamond>
+ * -- Sans Serif            - Overpass
+ * <https://fonts.google.com/specimen/Overpass>
+ * -- Monospace             - Mononoki Nerd Font
+ * <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Mononoki.zip> <https://madmalik.github.io/mononoki/>
+ * -- Chinese (Simplified)  - Noto Serif SC
+ * <https://fonts.google.com/noto/specimen/Noto+Serif+SC>
+ * -- Chinese (Traditional) - Noto Serif TC
+ * <https://fonts.google.com/noto/specimen/Noto+Serif+TC>
+ * -- Chinese (Hong Kong)   - Noto Serif HK
+ * <https://fonts.google.com/noto/specimen/Noto+Serif+HK>
+ * -- Japanese              - Noto Serif JP
+ * <https://fonts.google.com/noto/specimen/Noto+Serif+JP>
+ * -- Korean                - Noto Serif KR
+ * <https://fonts.google.com/noto/specimen/Noto+Serif+KR>
+ */
+
+/* Fonts */
+@import url("./irythill/fonts/eb-garamond.css");
+@import url("./irythill/fonts/overpass.css");
+@import url("./irythill/fonts/noto-serif-cjk.css");
+@import url("./irythill/fonts/mononoki-nf.css");
+
+:root {
+    /* Color palette */
+    --c-black: #060612ff;
+    --c-dark-blue: #183D62ff;
+    --c-mid-blue: #4188B6ff;
+    --c-lite-blue: #9fcdecff;
+    --c-darker-grey: #181b1fff;
+    --c-dark-grey: #2E3740ff;
+    --c-mid-grey: #414f5dff;
+    --c-lite-grey: #8196A3ff;
+    --c-lilac: #C4ACE9ff;
+    --c-orange: #F09E59ff;
+    --c-vanilla: #F9E9B4ff;
+    --c-snow: #ECFAFEff;
+
+
+    --base-Latin-font: "EB Garamond Medium";
+    --base-Chinese-font: "Noto Serif SC";
+    --base-Japanese-font: "Noto Serif JP";
+    --base-Korean-font: "Noto Serif KR";
+    --base-font-size: 1.15em;
+
+    --serif: var(--base-Latin-font);
+    --sans-serif: "Overpass";
+    --monospace: "Mononoki Nerd Font"; /*monospace font for codes, fences*/
+
+    --strong-weight: 800;
+    --base-line-height: 1.35914em;
+    --text-color: var(--c-snow);
+
+    --math-font-size: 1.2em;
+
+    --ui-font: var(--sans-serif);
+    --sourceMode-font: var(--monospace);
+
+    --code-font: var(--monospace);
+    --code-font-size: 0.95em;
+    --code-inline-font-size: 0.95em;
+
+    --h1-font-size: 3em;
+    --h2-font-size: 1.8em;
+    --h3-font-size: 1.6em;
+    --h4-font-size: 1.4em;
+    --h5-font-size: 1.22em;
+    --h6-font-size: 1.12em;
+
+    --bg-color:  var(--c-darker-grey);
+    --text-color: var(--c-snow); /*change text color*/
+    --md-char-color: var(--c-lilac); /*change color of meta characetrs like `*` in markdown */
+    --meta-content-color: var(--c-mid-blue); /*change color of meta contents like image text or link address in markdown */
+
+    --primary-color: var(--c-lilac); /* color of primary buttons */
+    --primary-btn-border-color: var(--c-lite-grey);
+    --primary-btn-text-color: var(--c-black);
+
+    --window-border: 2px solid var(--c-lite-grey); /*border for sidebar, etc*/
+
+    --active-file-bg-color: var(--c-dark-blue); /*background color if list item in file tree or file list*/
+    --active-file-text-color: var(--c-snow);
+    --active-file-border-color: var(--c-snow);
+    --sidebar-content-content: var(--c-orange);
+
+    --side-bar-bg-color: var(--c-dark-grey); /*change background of sidebar*/
+    --item-hover-bg-color: rgba(236, 250, 254, 0.64); /*background of control items when hover, like menu in sidebar*/
+    --item-hover-text-color: var(--c-dark-blue);
+}
+
+html {
+    font-size: 16px;
+}
+html, body {
+    margin: auto;
+}
+
+body {
+    font-family: var(--base-Latin-font), var(--base-Chinese-font), var(--base-Japanese-font), 
+        var(--base-Korean-font), serif; 
+}
+
+p {
+    text-indent: 2.2em;
+}
+
+#write {
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    padding-top: 40px;
+}
+
+
+/********* UI Elements *********/
+#typora-sidebar {
+    border-right: 2px linear-gradient(var(--c-orange), var(--c-lilac));
+
+}
+
+.file-list-item:not(.active) {
+    opacity: .7;
+    color: var(--c-lite-blue);
+}
+
+footer.ty-footer {
+    font-family: var(--monospace), monospace;
+    font-size: 14px;
+    color: var(--c-lite-blue);
+}
+footer:hover .footer-btn {
+    display: inline-block;
+    color: var(--c-dark-blue);
+}
+
+
+/********* Typesetting *********/
+#write>h1:first-child,
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: var(--c-lite-blue);
+    margin-top: 1.4em;
+    page-break-before: always;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    color: var(--c-snow);
+    margin-top: 1.6em;
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--c-lite-grey);
+    margin-top: 1.3em;
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+    color: var(--c-lilac);
+    margin-top: 1.3em;
+}
+
+h5 {
+    font-size: var(--h5-font-size);
+    color: var(--c-orange);
+    margin-top: 1.3em;
+}
+
+h6 {
+    font-size: var(--h6-font-size);
+    color: var(--c-vanilla);
+    margin-top: 1.3em;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h2:after {
+    background-image: linear-gradient(90deg, rgba(0,0,0,0), var(--c-mid-blue), rgba(0,0,0,0));
+    content: '';
+    margin: 0 auto;
+    margin-top: 0.4em;
+    width: 256px;
+    display: block;
+    height: 2px;
+}
+
+.sidebar-footer-item {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.sidebar-content {
+    font-family: var(--ui-font);
+    list-style: none;
+}
